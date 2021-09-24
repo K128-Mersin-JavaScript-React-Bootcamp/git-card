@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js%22%3E"></script> 
+
+
+    <div class="header">
+        <form id="searchProfile">
+            <input id="search" type="text" name="username" placeholder="Type Github username here..">
+            <input id="button" type="submit"  value="Analyze">
+        </form>
+    </div>
+	
+	<fieldset id="context">
+        <legend>Result</legend>
+        <div class="person">
+          <div class="pphotos">
+              <img
+              src="https://via.placeholder.com/90"
+              id="pphoto"/>
+            <span class="names">
+              <div id="fulname"></div>
+              <div id="username">@</div>
+            </span>
+            <span id="repo-info">
+              <p><strong></strong> repo(s)</p>
+              <p><strong></strong> code</p>
+            </span>
+  </div>
+  </div>
+    
+    <hr width="90%" color="black" align="center"/>
+
+    
+    <span id="languages">
+         
+    </span>
+        
+    </fieldset>
+	
+</body>
+</html>
