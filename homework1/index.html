@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Language Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="search">
+        <input type="text" id="search-input" placeholder="Type Github username here.." />
+        <input id="button" type="submit"  value="Analyze">
+      </div>
+    </header>
+    
+	<fieldset id="context">
+    <legend>Result</legend>
+      <div class="info-top">
+        <div class="user-info">
+          <div class="left">
+            <img
+            src="https://via.placeholder.com/90"
+              alt="user-profile-photo"
+              class="user-image"
+              id="user-image"
+            />
+          </div>
+          <div class="right">
+            <span><strong id="fullName">Firstname Lastname</strong></span>
+            <span class="username" id="username">@</span>
+          </div>
+        </div>
+        <span class="lang-info">
+          <span><strong id="repo-length">42</strong> repo</span >
+          <span><strong id="code-size">10,12 MB</strong> code</span
+          >
+          </span>
+      </div>
+      </fieldset>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
