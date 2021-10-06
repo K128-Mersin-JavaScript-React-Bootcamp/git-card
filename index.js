@@ -1,35 +1,28 @@
-const fullname= document.getElementById("fulname");
-const username= document.getElementById("username");
-const userimg = document.getElementById("pphoto");
-const repo = document.getElementById("repo-info");
-const button = document.getElementById("button");
-const search = document.getElementById("search");
-let user= search.value;
 
-function getData(e) {
-    
-    e.preventDefault();
 
-    axios.get(`https://api.github.com/users/${user}`)
-.then(function (response) {
+const user = document.getElementById("search-input").value;
+const userImage = document.getElementById("user-image");
+const userFullName = document.getElementById("fullName");
+const username = document.getElementById("username");
+const repoLength = document.getElementById("repo-length");
+const searchButton = document.getElementById("button");
+const url = "https://api.github.com/";
+let langsObj = {};
 
-    username.textContent = response.data.login;
-    fullname.textContent = response.data.name;
-    repo.textContent = response.data.public_repos;
-    userimg.src = response.data.avatar_url;
+function clickHandle() {
+  function getUserData() {
+    const user = document.getElementById("search-input");
+    fetch(url + "users/" + user.value)
+      .then((res) => res.json())
+      .then((data) => {
+        userFullName.textContent = data.name;
+        username.textContent = data.login;
+        repoLength.textContent = data.public_repos;
+        userImage.src = data.avatar_url;
+      });
+  }
 
-  })
-  .catch(function (error) {
-
-    console.log(error);
-  })
-  .then(function () {
-
-  });
+  getUserData();
 
 }
-
-button.addEventListener("click" , getData);
-
-getData();
-
+searchButton.addEventListener("click", clickHandle);
